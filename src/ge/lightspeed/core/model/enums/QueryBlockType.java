@@ -10,7 +10,7 @@ public enum QueryBlockType {
     HAVING(7, "HAVING"),
     JOIN(5, "JOIN"),
     LIMIT(6, "LIMIT"),
-    OFFSET(7, "OFFSET"),;
+    OFFSET(7, "OFFSET");
 
     private final Integer typeLength;
     private final String type;
