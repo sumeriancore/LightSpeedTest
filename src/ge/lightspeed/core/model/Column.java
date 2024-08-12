@@ -1,6 +1,6 @@
 package ge.lightspeed.core.model;
 
-public class Column extends TableData{
+public class Column extends DataSources {
 
     private String name;
     private String alias;

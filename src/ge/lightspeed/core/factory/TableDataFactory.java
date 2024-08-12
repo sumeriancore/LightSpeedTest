@@ -1,8 +1,8 @@
 package ge.lightspeed.core.factory;
 
-import ge.lightspeed.core.model.TableData;
+import ge.lightspeed.core.model.DataSources;
 
-public interface TableDataFactory<T extends TableData> {
+public interface TableDataFactory<T extends DataSources> {
 
     T createTableData();
 }

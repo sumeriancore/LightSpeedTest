@@ -26,8 +26,8 @@ public class DefaultFormattedSqlParser implements SqlParser {
         TableDataFactory<Column> columnFactory = new ColumnFactory();
 
         return Query.builder()
-                .columns(parseTableData(rawQuery.getSelectRow(), columnFactory, QueryBlockType.SELECT))
-                .tables(parseTableData(rawQuery.getFromRow(), tableFactory, QueryBlockType.FROM))
+                .columns(parseTableInfo(rawQuery.getSelectRow(), columnFactory, QueryBlockType.SELECT))
+                .tables(parseTableInfo(rawQuery.getFromRow(), tableFactory, QueryBlockType.FROM))
                 .joins(parseJoins(rawQuery.getJoinRows()))
                 .whereClauses(parseWhereClause(rawQuery.getWhereRow()))
                 .groupByColumns(parseGroupBy(rawQuery.getGroupByRow()))
@@ -144,7 +144,7 @@ public class DefaultFormattedSqlParser implements SqlParser {
         join.setCondition(conditionBuilder.toString().trim());
     }
 
-    private static <T extends TableData> List<T> parseTableData(
+    private static <T extends DataSources> List<T> parseTableInfo(
             String sqlQueryChunk,
             TableDataFactory<T> factory,
             QueryBlockType type

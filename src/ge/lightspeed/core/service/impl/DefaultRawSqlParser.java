@@ -49,7 +49,7 @@ public class DefaultRawSqlParser implements SqlParser {
         List<Column> columnList = new ArrayList<>();
 
         for (String column : columns) {
-            String[] columnParts = column.trim().split("\\s+AS\\s+|\\s+");
+            String[] columnParts = column.trim().split("\\s+AS\\s+|\\s+|\\s+as\\s+");
             String columnName = columnParts[0];
             String alias = (columnParts.length > 1) ? columnParts[columnParts.length - 1] : columnName;
             columnList.add(new Column(columnName, alias));

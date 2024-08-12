@@ -1,15 +1,15 @@
 package ge.lightspeed.core.model;
 
-public abstract class TableData {
+public abstract class DataSources {
 
     protected String name;
 
     protected String alias;
 
-    public TableData() {
+    public DataSources() {
     }
 
-    public TableData(String name, String alias) {
+    public DataSources(String name, String alias) {
         this.name = name;
         this.alias = alias;
     }
